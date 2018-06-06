@@ -23,6 +23,11 @@ def order(t):
             responce('light_on')
         elif "けして" in t or "消して" in t:
             responce('light_off')
+        else:
+            responce('errer')
+
+    else:
+        responce('errer')
 
 #受け取った命令別の返事と機能の実行
 def responce(p):
@@ -34,6 +39,10 @@ def responce(p):
         jtalk(text)
     elif p == 'light_off':
         text = '電気を消しますね'
+        jtalk(text)
+
+    elif p == 'errer':
+        text = 'ごめんなさい，聞き取れませんでした．'
         jtalk(text)
 
 if __name__ == '__main__':

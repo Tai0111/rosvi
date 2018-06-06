@@ -54,7 +54,7 @@ def main():
 
                         #docomo_APIによる高精度認識
                         jtalk.responce('start')
-                        time.sleep(1)
+                        time.sleep(2)
                         command = analysis.recognize()
                         print (command)
 
