@@ -15,7 +15,6 @@ import time
 import string
 
 import analysis
-import audio
 import jtalk
 
 host = "10.0.1.2"
@@ -33,6 +32,7 @@ def main():
     client.connect((host, port)) #サーバーモードで起動したjuliusに接続
 
     print ("Recognition Start")
+    jtalk.responce('start')
 
     try:
         data = '' # dataの初期化
@@ -53,10 +53,9 @@ def main():
                         client.close()    # docomoAPIとの競合を避けるためjuliusを一時停止
 
                         #docomo_APIによる高精度認識
-                        jtalk.responce('start')
+                        jtalk.responce('responce')
                         time.sleep(2)
                         command = analysis.recognize()
-                        print (command)
 
                         #julius 再起動
                         p = subprocess.Popen([script], stdout=subprocess.PIPE, shell=True) # julius起動スクリプトを実行
@@ -65,7 +64,6 @@ def main():
                         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                         client.connect((host, port)) #サーバーモードで起動したjuliusに接続
 
-                    print (word) # wordを表示
                     data = '' # dataの初期化
 
             else:
