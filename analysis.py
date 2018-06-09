@@ -22,7 +22,7 @@ def rec():
     #サンプリングレート,APIの規定で16kHzに設定
     RATE = 16000
     #録音時間
-    RECORD_SECONDS = 4
+    RECORD_SECONDS = 3
 
     #pyaudio
     audio = pyaudio.PyAudio()
@@ -70,7 +70,6 @@ def recognize():
     responce = (result.json()['text'])
 
     jtalk.order(responce)
-    return responce
 
 if __name__ == '__main__' :
     print ('これは音声認識モジュールです．importしてください.')

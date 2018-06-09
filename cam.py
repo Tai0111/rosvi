@@ -3,7 +3,7 @@
 
 import cv2
 
-def cam()
+def cam():
     cap = cv2.VideoCapture(0)
 
     while( cap.isOpened() ):
@@ -21,4 +21,5 @@ def cam()
     cv2.destroyAllWindows()
 
 if __name__ == '__main__' :
-    print ('これはカメラモジュールです．importしてください.')
+    #print ('これはカメラモジュールです．importしてください.')
+    cam()
